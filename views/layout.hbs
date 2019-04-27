@@ -5,11 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
+  
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
 
-  {{{body}}}
+        <ul class="uk-navbar-nav">
+            <li><a href="/">Active</a></li>
+  
+            <li><a href="/business">Business</a></li>
+        </ul>
+
+    </div>
+
+<div class="uk-navbar-right">
+  <ul class="uk-navbar-nav">
+    {{#unless user}}
+    <li><a href="/auth/login">Login</a></li>
+    <li><a href="/auth/register">Register</a></li>
+    {{else}}
+        <li><a href="/profile">{{user.email}}</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+        {{/unless}}
+  </ul>
+</div>
+</nav>
+
+
+<div class="uk-inline">
+<img src="../images/people.jpeg" alt="Example image" class="uk-animation-reverse uk-transform-origin-top-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true">
+    <div class="uk-position-medium uk-position-cover uk-overlay  uk-flex uk-flex-center uk-flex-middle">  {{{body}}}
+</div>
+</div>
+
+<!-- UIkit JS async defer help in performance-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 
   <script src="/javascripts/script.js"></script>
 </body>
