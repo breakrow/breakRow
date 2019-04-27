@@ -1,0 +1,50 @@
+	<section class="uk-section">
+		<div class="uk-container class=uk-flex uk-flex-center uk-flex-column uk-width-1-3">
+			<ul uk-accordion="multiple: true">
+				<li class="uk-open">
+					<a class="uk-accordion-title" href="#">Add Customer</a>
+					<div class="uk-accordion-content">
+						<form>
+							<fieldset class="uk-fieldset">
+								<div class="uk-inline">
+									<span class="uk-form-icon" uk-icon="icon: user"></span><input id="inputName" name="fullname"
+										class="uk-input" type="text" placeholder="Enter Customer Name">
+								</div>
+								<div class="uk-margin">
+									<div class="uk-inline">
+										<span class="uk-form-icon" uk-icon="icon: mail"></span>
+										<input name="email" class="uk-input" type="email" placeholder="example@example.com">
+									</div>
+								</div>
+								<div class="uk-margin">
+									<div class="uk-inline">
+										<span class="uk-form-icon" uk-icon="icon: phone"></span>
+										<input name="phone" class="uk-input" type="text" placeholder="55 1233 5678">
+									</div>
+								</div>
+
+
+								<div class="uk-margin">
+									<textarea class="uk-textarea" rows="3" placeholder="Textarea"></textarea>
+								</div>
+							</fieldset>
+
+							<button class="uk-button uk-button-primary">Add </button>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<hr class="uk-divider-icon">
+	</section>
+
+	<section>
+		<div class="uk-container uk-flex uk-flex-center uk-flex-column">
+			<h4>Waiting Line</h4>
+			<ul class="uk-list uk-list-large uk-list-striped" id="queue">
+				<li>List item 1</li>
+				<li>List item 2</li>
+				<li>List item 3</li>
+			</ul>
+		</div>
+	</section>
