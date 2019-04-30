@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const Usert = require('../models/User')
 
 
 const isAuth = (req, res, next) => {
@@ -11,8 +12,21 @@ const isAuth = (req, res, next) => {
 };
 
 
+
 router.get('/', isAuth, (req, res) => {
-  res.render('profile');
+  const {user} = req
+  res.render('profile',{user});
 });
 
+
+router.get("/:id/queue", isAuth, (req, res) => {
+  const { id } = req.params;
+  User.findById(id)
+    .then(user => {
+      res.render("queue", { user });
+    })
+    .catch(err => {
+      res.render("queue", { err });
+    });
+});
 module.exports = router;
