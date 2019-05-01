@@ -8,4 +8,19 @@ body {
 a {
   color: #00b7ff; }
 
+nav.main-navbar {
+  height: 60px; }
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: black;
+  height: 100px;
+  position: relative;
+  background-image: url(../images/logo.png);
+  background-position-x: 20px;
+  background-position-y: 10px;
+  background-repeat: no-repeat;
+  background-size: 6.8%; }
+
+/*# sourceMappingURL=style.css.map */
+
 /*# sourceMappingURL=style.css.map */

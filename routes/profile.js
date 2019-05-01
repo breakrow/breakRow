@@ -19,14 +19,6 @@ router.get('/', isAuth, (req, res) => {
 });
 
 
-router.get("/:id/queue", isAuth, (req, res) => {
-  const { id } = req.params;
-  User.findById(id)
-    .then(user => {
-      res.render("queue", { user });
-    })
-    .catch(err => {
-      res.render("queue", { err });
-    });
-});
+
+
 module.exports = router;

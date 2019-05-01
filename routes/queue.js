@@ -10,8 +10,18 @@ const isAuth = (req, res, next) => {
 };
 
 
-router.get("/queue" , isAuth, (req,res) => {
+router.get("/", isAuth, (req, res) => {
   res.render("queue")
-})
+  // let date = new Date() // current Id
+  // const { id } = req.params;
+  // User.findById(id, date)
+  //   .then(user => {
+  //     res.render("queue", { user });
+  //   })
+  //   .catch(err => {
+  //     res.render("queue", { err });
+  //   });
+});
+
 
 module.exports = router;
