@@ -12,34 +12,39 @@ const isAuth = (req, res, next) => {
 };
 
 
-router.get("/:id", isAuth, (req, res) => {
-  //res.render("queue")
-  //let date = new Date() // current Id
-  const { id } = req.params;
-  User.findById(id)
-    .then(user => {
-      //res.render("queue", { user });
-      res.render("queue");
+
+// show queue for an authenticated user (company)
+router.get("/", isAuth, (req, res) => {
+  const {user} = req;
+  Customer.find({businessID: user._id})
+    .then(customers => {
+      res.render("queue" , {customers});
     })
     .catch(err => {
-      res.render({ err });
+      res.render('queue');
+    });
+});
+
+router.get('/add',isAuth,(req,res) =>{
+  res.render('queue')
+})
+
+
+router.post("/add", isAuth, (req, res) => {
+  let {_id:businessID} = req.user;
+  customer = { businessID, ...req.body };
+  console.log(customer);
+  Customer.create(customer)
+    .then(() => {
+      res.redirect("/queue");
+    })
+    .catch(err => {
+      res.render("/");
     });
 });
 
 
 
-router.post("/add", isAuth, (req, res) => {
-  let {_id:business} = req.user;
-  customer = { business, ...req.body };
-  console.log(customer)
-  // Customer.create(customer)
-  //   .then(() => {
-  //     res.redirect("/queue");
-  //   })
-  //   .catch(err => {
-  //     res.render("/profile", { err });
-  //   });
-});
 
 
 module.exports = router;

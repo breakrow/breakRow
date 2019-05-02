@@ -2,9 +2,14 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema; 
 
 const customerSchema = new Schema({
-  
-  fullName:{
+  businessID:{
+    type:Schema.Types.ObjectId,
+    required:true,
+    ref:"User"
+  },
+  fullname:{
     type: String,
+    required:true
   }, 
   email:{
     type: String,
@@ -15,15 +20,9 @@ const customerSchema = new Schema({
   },
   comment:{
     type: String
-  },
-  business: { // User model
-    type: Schema.Types.ObjectId, 
-    requiered: true,
-    ref: "Business"
-  }
-  
+  }    
 }, 
   {timestamps: true}
 );
 
-mongoose.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model("Customer", customerSchema);
