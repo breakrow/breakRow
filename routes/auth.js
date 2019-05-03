@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const passport = require("passport");
 
+
 router.get("/login", (req, res) =>{
   res.render("auth-form", {action:"Login"});
 });
@@ -27,7 +28,8 @@ router.post("/register", (req, res) => {
   
   User.register(req.body, password)
   .then(() => {
-    res.redirect("/auth/login");
+    //res.redirect("/auth/login");
+    res.redirect("/profile");
   })
   .catch(err => {
     // console.log(err);
@@ -37,7 +39,7 @@ router.post("/register", (req, res) => {
 
 router.get("/logout", (req, res) => {
    req.logout();
-   res.redirect("/");
+   res.redirect("/auth/login");
 });
 
 module.exports = router;

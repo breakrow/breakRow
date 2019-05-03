@@ -1,14 +1,17 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00b7ff; }
 
-nav.main-navbar{
-    height: 60px;}
+nav.main-navbar {
+  height: 60px; }
 
-
-.uk-navbar-container:not(.uk-navbar-transparent){
+.uk-navbar-container:not(.uk-navbar-transparent) {
   background: black;
   height: 100px;
   position: relative;
@@ -16,8 +19,8 @@ nav.main-navbar{
   background-position-x: 20px;
   background-position-y: 10px;
   background-repeat: no-repeat;
-  background-size:  6.8%;
-    }
+  background-size: 6.8%; }
 
 /*# sourceMappingURL=style.css.map */
 
+/*# sourceMappingURL=style.css.map */

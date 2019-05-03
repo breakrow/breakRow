@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
-
+const User = require('../models/User');
+const Queue = require('../models/Queue');
 
 const isAuth = (req, res, next) => {
   if(req.isAuthenticated()){
@@ -11,8 +12,13 @@ const isAuth = (req, res, next) => {
 };
 
 
+
 router.get('/', isAuth, (req, res) => {
-  res.render('profile');
+  const {user} = req
+  res.render("profile" ,{user})
 });
+
+
+
 
 module.exports = router;

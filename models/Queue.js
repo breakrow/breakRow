@@ -1,28 +1,23 @@
-const Schema = mongoose.Schema; 
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const queueSchema = new Schema({
-  id: {
-    type: Number, 
-    required: true
-  },
-  client: {
-    type: Schema.Types.ObjectId, 
-    required: true,
-    ref: "User"
+
+const queueSchema = new Schema(
+  {
+  businessName: {
+    type: String, 
+    required: true, 
   }, 
-  email: {
-    type: String
+  businessID: {
+    type: Schema.Types.ObjectId,
+    required: true, 
+    ref:"User"
   },
-  comment: {
-    type: string
-  },
-  business: {
-    type: Schema.Types.ObjectId, 
-    requiered: true,
-    ref: "Business"
+  customers:{
+    type:[String]
   }
-}, 
-  {timestams: true}
+}, {timestamps: true}
 );
 
-mongoose.exports = mongoose.model("Queue", queueSchema);
+
+module.exports = mongoose.model("Queue", queueSchema);
