@@ -49,20 +49,26 @@
 
 			<div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2019-05-03T05:55:00+00:00">
 				<div>
-					<div class="uk-countdown-number uk-countdown-days"></div>
-					<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+        <div class="uk-countdown-number uk-countdown-days"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-hours"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-minutes"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-seconds"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+    </div>
 				</div>
-				<div class="uk-countdown-separator">:</div>
-				<div>
-					<div class="uk-countdown-number uk-countdown-hours"></div>
-					<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
-				</div>
-				<div class="uk-countdown-separator">:</div>
-				<div>
-					<div class="uk-countdown-number uk-countdown-minutes"></div>
-					<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
-				</div>
-				<div class="uk-countdown-separator">:</div>
+				
 			
 			</div>
 
@@ -73,7 +79,7 @@
 <div class="uk-inline">
     <button class="uk-button uk-button-default" type="button">{{customer.fullname}}</button>
 		<div uk-dropdown="mode: click">{{customer.comment}}</div>
-		<button class="uk-button uk-button-default" type="button">Remove From List</button>
+		<a class="uk-button uk-button-default" type="button" href="/queue/delete">Remove From L	ist</a>
 		<button class="uk-button uk-button-default" type="button">Notify</button>
 </div>
 			{{/each}}

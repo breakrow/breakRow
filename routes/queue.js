@@ -40,11 +40,18 @@ router.post("/add", isAuth, (req, res) => {
     })
     .catch(err => {
       res.render("/");
-    });
+    })
 });
 
-
-
-
-
+router.delete('/delete' , isAuth , (req,res) =>{
+  const {id } = req.params;
+  console.log(req.params)
+  // Customer.findOneAndDelete({_id:id})
+  // .then(() =>{
+  //   redirect('/queue')
+  // })
+  // .catch(err =>{
+  //   res.render("/")
+  // })
+})
 module.exports = router;
