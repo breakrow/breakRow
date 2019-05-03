@@ -1,13 +1,3 @@
-
-
-
-<div>
-  <a class="uk-button uk-button-default" href="/queue">Show Queue</a>
-</div>
-
-
-
-
 <section class="uk-section" >
   <div class="uk-container">
     <div class="uk-grid-match" uk-grid>
@@ -37,7 +27,7 @@
         <div>
          
           <div class="uk-section-small">
-            <div class="uk-grid-match uk-child-width-1-3 uk-grid-small" uk-grid>
+            <div class="uk-grid-match uk-child-width-1-2 uk-grid-small" uk-grid>
               {{#each businesses as |business|}}
               {{> ownerPropertyCard business}}
               {{/each}}
@@ -48,3 +38,7 @@
     </div>
   </div>
 </section>
+
+<div>
+  <a class="uk-button uk-button-default" href="/queue">Show Queue</a>
+</div>
