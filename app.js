@@ -74,11 +74,13 @@ const index = require('./routes/index');
 const auth = require("./routes/auth");
 const profile = require("./routes/profile");
 const queue = require("./routes/queue");
+const business = require("./routes/business");
 
 app.use('/', index);
 app.use("/auth", auth);
 app.use("/profile", profile);
 app.use("/queue", queue);
+app.use("/business", business);
 
 
 
