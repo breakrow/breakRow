@@ -1,10 +1,10 @@
 <section class="uk-section" >
   <div class="uk-container">
     <div class="uk-grid-match" uk-grid>
-      <div class="uk-width-1-4">
+      <div class="uk-width-1-2">
         <div>
           {{#if user.image}}
-          <img class="uk-border-circle" style="width: 200px; height: 200px" src="{{user.image}}" alt="{{user.name}}">
+          <img class="uk-border" style="width: 200px; height: 200px" src="{{user.image}}" alt="{{user.name}}">
           {{else}}
           <img src="https://static1.squarespace.com/static/57a3de3559cc68cdfbfe818f/57ce7c9f6b8f5b434f1e8d05/57ce7cb437c581699710321c/1473150134640/restaurant.png?format=1000w" alt="profile-image">
           {{/if}}
@@ -18,7 +18,7 @@
           </div>
 
           <div>
-            <a class="uk-button uk-button-secondary" href="/profile/{{user._id}}/edit">editar perfil</a>
+            <a class="uk-button uk-button-secondary" href="/profile/{{user._id}}/edit">Edit Profile</a>
           </div>
 
         </div>
@@ -29,7 +29,7 @@
           <div class="uk-section-small">
             <div class="uk-grid-match uk-child-width-1-2 uk-grid-small" uk-grid>
               {{#each businesses as |business|}}
-              {{> ownerPropertyCard business}}
+              {{> ownerBusinessCard business}}
               {{/each}}
             </div>
           </div>
@@ -40,5 +40,5 @@
 </section>
 
 <div>
-  <a class="uk-button uk-button-default" href="/queue">Show Queue</a>
+  <a class="uk-button uk-button-default" href="/queue/">Show Queue</a>
 </div>

@@ -16,10 +16,10 @@ const passport = require("./helpers/passports");
 mongoose
   .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
   .catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.error('Error connecting to mongo', err);
   });
 
 const app_name = require('./package.json').name;
@@ -75,6 +75,7 @@ const auth = require("./routes/auth");
 const profile = require("./routes/profile");
 const queue = require("./routes/queue");
 const business = require("./routes/business");
+
 
 app.use('/', index);
 app.use("/auth", auth);

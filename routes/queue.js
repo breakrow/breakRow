@@ -12,22 +12,21 @@ const isAuth = (req, res, next) => {
 };
 
 
-
 // show queue for an authenticated user (company)
-router.get("/", isAuth, (req, res) => {
+router.get("/", isAuth, (req, res, next) => {
   const {user} = req;
   Customer.find({businessID: user._id})
     .then(customers => {
       res.render("queue" , {customers});
     })
     .catch(err => {
-      res.render('queue');
+      res.render('queue', { err });
     });
 });
 
 router.get('/add',isAuth,(req,res) =>{
   res.render('queue')
-})
+});
 
 
 router.post("/add", isAuth, (req, res) => {
@@ -42,9 +41,5 @@ router.post("/add", isAuth, (req, res) => {
       res.render("/");
     });
 });
-
-
-
-
 
 module.exports = router;

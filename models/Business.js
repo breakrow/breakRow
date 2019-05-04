@@ -4,7 +4,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema; 
 
-const propertySchema = new Schema(
+const businessSchema = new Schema(
   {
     company: {
       type: Schema.Types.ObjectId, 
@@ -38,5 +38,8 @@ const propertySchema = new Schema(
   }, 
   { timestamps: true}
 );
+businessSchema.index({
+  location: "2dsphere"
+});
 
 module.exports = mongoose.model("Business", businessSchema)
