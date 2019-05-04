@@ -24,8 +24,7 @@ router.get("/:id/edit", helpers.isAuth, (req, res) => {
     });
 });
 
-router.post(
-  "/:id/edit",
+router.post("/:id/edit",
   helpers.isAuth,
   uploader.single("image"),
   (req, res) => {
