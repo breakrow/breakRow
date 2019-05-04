@@ -1,11 +1,11 @@
-<section class="uk-section">
+<section class="uk-section uk-background-muted">
 	<div class="uk-container class=uk-flex uk-flex-center ">
 		<ul uk-accordion="multiple: true">
 			<li class="uk-open">
 				<a class="uk-accordion-title" href="#">Add Customer</a>
-				<div class="uk-accordion-content">
+				<div class="uk-accordion-content" id="addcustomer">
 
-					<form action="/queue/add" method="POST">
+					<form action="/queue/add" method="POST" >
 						<fieldset class="uk-fieldset">
 							<div class="uk-inline">
 								<span class="uk-form-icon" uk-icon="icon: user"></span><input id="inputName" name="fullname"
@@ -42,7 +42,7 @@
 
 {{#if customers}}
 <hr class="uk-divider-icon">
-<section>
+<section class="uk-background-muted">
 	<div class="uk-container uk-flex uk-flex-center uk-flex-column">
 		<h1>Average Waiting Time</h1>
         

@@ -22,8 +22,15 @@ nav.main-navbar {
   background-size: 6.8%; }
 
 #profile {
-  padding-top: 50em;
-  padding-left: 135em; }
+  padding-top: 25em;
+  padding-left: 87em; }
+
+.uk-grid-match {
+  padding-bottom: 5em;
+  padding-right: 10em; }
+
+#show {
+  padding-right: 50em; }
 
 /*# sourceMappingURL=style.css.map */
 
